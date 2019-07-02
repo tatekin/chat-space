@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has_many :members
+- has_many :groups, through: :members
+
+### Index
+- name
