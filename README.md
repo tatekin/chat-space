@@ -37,3 +37,17 @@ Things you may want to cover:
 
 ### Index
 - name
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :messages
+- has_many :members
+- has_many :users, through: :members
+
+### Index
+- name
