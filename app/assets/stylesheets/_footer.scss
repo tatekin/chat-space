@@ -1,0 +1,42 @@
+&__footer{
+  background-color: lightgrey;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  &__box{
+    height: 50px;
+    background-color: $white-back;
+    margin: auto;
+    margin-right: 15px;
+    margin-left: 40px;
+    width: 100%;
+    display: flex;
+    &__message{
+      width: 100%;
+      font-size: 16px;
+      color: $black-font;
+      line-height: 50px;
+      margin-left: 10px;
+    }
+    &__icon{
+      margin: auto 10px auto 0;
+      color: black;
+      cursor: pointer;
+      &__input{
+        display: none;
+      }
+    }
+  }
+  &__btn{
+    background-color: $water;
+    height: 50px;
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-right: 40px;
+    color: $white-font;
+  }
+}
