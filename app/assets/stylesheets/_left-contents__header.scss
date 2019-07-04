@@ -1,0 +1,23 @@
+&__header{
+  height: 100px;
+  background-color: #253141;
+  padding: $main-padding;
+  margin-bottom: 20px;
+  display: flex;
+  &__user-name{
+    width: 100%;
+    color: $white-font;
+    font-size: 16px;
+    font-weight: bold;
+    margin: auto;
+  }
+  &__left-icon{
+    margin: auto;
+    margin-right: 5px;
+    color: $white-font;
+  }
+  &__right-icon{
+    margin: auto;
+    color: $white-font;
+  }
+}

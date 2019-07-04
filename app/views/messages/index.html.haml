@@ -1,0 +1,61 @@
+.header
+  グループを作成しました
+.contents
+  .left-contents
+    .left-contents__header
+      .left-contents__header__user-name
+        test-user
+      =link_to "", class: "left-contents__header__left-icon" do
+        = fa_icon "edit"
+      =link_to "", class: "left-contents__header__right-icon" do
+        = fa_icon "cog"
+    .left-contents__group
+      .left-contents__group__name
+        test-group
+      .left-contents__group__text
+        さようなら
+    .left-contents__group
+      .left-contents__group__name
+        sample-group    
+      .left-contents__group__text
+        hello!
+    .left-contents__group
+      .left-contents__group__name
+        example
+      .left-contents__group__text
+        まだメッセージがありません
+  .right-contents
+    .right-contents__header
+      .right-contents__header__text
+        .right-contents__header__text__group-name
+          test-group
+        .right-contents__header__text__members-name
+          Member : test-user
+      .right-contents__header__btn
+        Edit
+    .right-contents__message
+      .right-contents__message__title
+        .right-contents__message__title__name
+          test-user
+        .right-contents__message__title__time
+          2019/7/3(wed) 14:31:53
+      .right-contents__message__text
+        こんにちは！
+    .right-contents__message
+      .right-contents__message__title
+        .right-contents__message__title__name
+          test-user
+        .right-contents__message__title__time
+          2019/7/3(wed) 14:31:53
+      .right-contents__message__text
+        さようなら
+    .right-contents__footer
+      .right-contents__footer__box
+        .right-contents__footer__box__message
+          type a message
+        %form.right-contents__footer__box__icon{method: "post", enctype: "multipart/form-data"}
+          %label
+            =fa_icon "image"
+            %input.right-contents__footer__box__icon__input{type: "file", name: "datafile"}
+      .right-contents__footer__btn
+        Send

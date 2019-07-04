@@ -1,0 +1,16 @@
+&__group{
+  padding: $main-padding;
+  padding-bottom: 40px;
+  background-color: $dark-back;
+  &__name{
+    color: $white-font;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  &__text{
+    color: $white-font;
+    font-size: 11px;
+    font-weight: bold;
+  }
+}

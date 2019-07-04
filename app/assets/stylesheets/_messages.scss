@@ -1,0 +1,24 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  background-color: $water;
+  text-align: center;
+  color: $white-font;
+}
+
+.contents{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+@import "left-contents";
+@import "right-contents";
