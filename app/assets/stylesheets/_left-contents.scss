@@ -1,0 +1,7 @@
+.left-contents{
+  width: 300px;
+  height: 100%;
+  background-color: $dark-back;
+  @import "left-contents__header";
+  @import "left-contents__group";
+}
