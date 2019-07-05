@@ -9,21 +9,8 @@
         = fa_icon "edit"
       =link_to "", class: "left-contents__header__right-icon" do
         = fa_icon "cog"
-    .left-contents__group
-      .left-contents__group__name
-        test-group
-      .left-contents__group__text
-        さようなら
-    .left-contents__group
-      .left-contents__group__name
-        sample-group    
-      .left-contents__group__text
-        hello!
-    .left-contents__group
-      .left-contents__group__name
-        example
-      .left-contents__group__text
-        まだメッセージがありません
+    .message
+      = render @messages
   .right-contents
     .right-contents__header
       .right-contents__header__text
@@ -51,11 +38,13 @@
         さようなら
     .right-contents__footer
       .right-contents__footer__box
-        .right-contents__footer__box__message
-          type a message
-        %form.right-contents__footer__box__icon{method: "post", enctype: "multipart/form-data"}
-          %label
-            =fa_icon "image"
-            %input.right-contents__footer__box__icon__input{type: "file", name: "datafile"}
+        .form
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+            .form__mask
+              = f.label :image, class: 'form__mask__image' do
+                = fa_icon 'picture-o', class: 'icon'
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'form__submit'
       .right-contents__footer__btn
         Send
