@@ -1,6 +1,5 @@
-.tekitou
-  .wrapper
-    = render 'shared/side_bar'
+.wrapper
+  = render 'shared/side_bar'
   .chat
     .header
       .left-header
@@ -9,7 +8,7 @@
         %ul.left-header__members
           Member：
           %li.member
-          = @group.users.each do |user|
+          - @group.users.each do |user|
             = user.name
       .right-header
         .right-header__button
