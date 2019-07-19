@@ -3,7 +3,7 @@ $(function(){
     var content = message.content ? `${message.content}`:"";
     var image   = message.image_url   ? `${message.image_url}`:"";
 
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">${message.user_name}</div>
                     <div class="upper-message__date">${message.date}</div>
@@ -15,6 +15,28 @@ $(function(){
                 </div>`
     return html;
   }
+
+  var buildMessageHTML = function(message) {
+    var content = message.content    ? message.content:"";
+    var image   = message.image.url ? message.image.url:"";
+    var html =  '<div class="message" data-message-id=' + message.id +'>' +
+                  '<div class="upper-message">' +
+                    '<div class="upper-message__user-name">' +
+                      message.user_name +
+                    '</div>' +
+                    '<div class="upper-message__date">' +
+                      message.created_at +
+                    '</div>' +
+                  '</div>' +
+                  '<div class="lower-message">' +
+                    '<p class="lower-message__content">' +
+                      content +
+                    '</p>' +
+                    '<img src="' + image + '" class="lower-message__image" >' +
+                  '</div>' +
+                '</div>'
+    return html;
+  };
 
   function scrollBottom(){
     var target = $(".message").last();
@@ -49,4 +71,29 @@ $(function(){
       $(".form__submit").prop("disabled", false);
     })
   });
+
+  var reloadMessages = function() {
+    var last_message_id = $(".message").last().data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: "get",
+      dataType: "json",
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log(messages);
+      var insertHTML = '';
+      if(messages.length !== 0) {
+        messages.forEach(function(message){
+          var html = buildMessageHTML(message);
+          $(".messages").append(html);
+          scrollBottom();
+        });
+      };
+    })
+    .fail(function() {
+      console.log("error");
+    });
+  };
+  setInterval(reloadMessages, 5000);
 });
