@@ -28,5 +28,10 @@ class UsersController < ApplicationController
     if params[:keyword].present?
       @users = User.where('name LIKE(?)', "#{params[:keyword]}%").where.not(id: current_user.id)
     end
+
+    # if params[:keyword].present?
+    #   group = Group.find(params[:id])
+    #   @users = User.where('name LIKE(?)', "#{params[:keyword]}%").where.not(id: group.user_id)
+    # end
   end
 end
