@@ -1,27 +1,31 @@
-# README
+# Chat-space
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+グループでチャットをするアプリケーションです。
 
-Things you may want to cover:
 
-* Ruby version
+## 機能
+- 新規登録機能
+- グループ内でのチャット機能
+- 複数人によるグループチャット機能
+- チャット相手の検索機能
+- チャットグループへのユーザー招待機能
+- チャットの履歴表示機能
+- 画像送信機能
+- チャットの自動更新
+- 単体テスト
+- 統合テスト
 
-* System dependencies
+## 開発環境
 
-* Configuration
+- Ruby (2.5.1)
+- Rails (5.0.7)
+- JavaScript
+- jQuery
+- PostgreSQL
+- Heroku
+- AWS S3
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# DB設計
 
 ## usersテーブル
 
