@@ -1,7 +1,7 @@
 # Chat-space
 
 グループでチャットをするアプリケーションです。
-
+![chat-space](https://gyazo.com/ab78edeb6098e471146a973b5fd8eb04.png)
 
 ## 機能
 - 新規登録機能
