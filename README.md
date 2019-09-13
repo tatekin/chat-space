@@ -21,9 +21,8 @@
 - Rails (5.0.7)
 - JavaScript
 - jQuery
-- PostgreSQL
-- Heroku
-- AWS S3
+- MySQL
+- AWS
 
 # DB設計
 
