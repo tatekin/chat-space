@@ -22,7 +22,8 @@
 - JavaScript
 - jQuery
 - MySQL
-- AWS
+- AWS(EC2,S3)
+- RSpec
 
 # DB設計
 
